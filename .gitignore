@@ -1,0 +1,10 @@
+.env
+.obsidian/
+.claude/scheduled-tasks/
+.claude/plans/
+.claude/shell-snapshots/
+.claude/file-history/
+.claude/telemetry/
+.claude/todos/
+.claude/projects/
+_temp/
