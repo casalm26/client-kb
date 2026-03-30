@@ -41,9 +41,10 @@ A good weekly review entry includes (where applicable):
 
 - [ ] What was done (concrete deliverables or progress)
 - [ ] Meeting outcomes and relationship context
-- [ ] Key metrics or data points
+- [ ] Key metrics or data points discussed
 - [ ] Strategic decisions or direction changes
 - [ ] Forward-looking next steps
+- [ ] Sentiment and working relationship notes
 
 ## Gap Identification
 
@@ -52,3 +53,5 @@ A good weekly review entry includes (where applicable):
 1. **Meeting transcript** — share a recording link, Claude processes it
 2. **Data or report** — share relevant data, Claude extracts key points
 3. **Quick verbal summary** — [YOUR_NAME] dictates context, Claude logs it
+
+Also check: calendar meetings this week that have no corresponding meeting note file in `meetings/`.

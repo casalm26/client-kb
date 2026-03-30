@@ -8,10 +8,10 @@ last_updated:
 ## Current Goals
 What we're trying to achieve right now.
 
-## Key Metrics
+## KPIs & Metrics
 How we measure success. Include baselines and targets where known.
 
-## Engagement Details
+## Retainer / Engagement Details
 Scope, timeline, budget, contract terms — whatever defines the working relationship.
 
 ## Active Initiatives

@@ -19,7 +19,7 @@ What this [WORK_UNIT] is about — their business, market, size, and what matter
 ## What We Do For Them
 Summary of the engagement — services provided, scope, deliverables.
 
-## Tools & Technical Setup
+## Technical Setup
 Relevant tools, platforms, systems, or technical details for this [WORK_UNIT].
 
 ## Current Status

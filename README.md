@@ -8,6 +8,7 @@ A personal knowledge base powered by [Obsidian](https://obsidian.md) and [Claude
 - **Auto-logging:** After meaningful work, Claude logs what was done and why
 - **Meeting notes:** Share a transcript and get structured notes, action items, and follow-up emails
 - **Weekly reviews:** Friday summaries of work across all your clients/projects
+- **Knowledge compounding:** Solved problems are documented and auto-retrieved next time
 - **Daily journal:** Cross-project continuity between sessions
 
 Works for anyone — freelancers, consultants, developers, designers, project managers, lawyers, anyone managing ongoing work.
@@ -25,10 +26,11 @@ The wizard asks your name, what you do, and what tools you use. Quick setup take
 
 ```
 CLAUDE.md               — Automation rules Claude follows
-_templates/             — File templates (profiles, strategies, meeting notes)
-SOPs/                   — Workflows (meeting processing, weekly review)
+_templates/             — File templates (profiles, strategies, meeting notes, solutions)
+SOPs/                   — Workflows (meeting processing, weekly review, automations)
 _setup/                 — Setup wizard and permissions
 _daily/                 — Daily session journals
+_solutions/             — Reusable problem→solution documentation
 ```
 
 ## Requirements

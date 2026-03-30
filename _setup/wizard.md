@@ -67,7 +67,7 @@ Replace all placeholders across every file in the vault:
 - `[WORK_FOLDER]` → "Clients"
 - `[WORK_UNIT_PLURAL]` → "Clients" (in headers/titles context)
 
-Files to update: CLAUDE.md, _templates/project-mapping.md, _templates/_overview.md, _templates/client-profile.md, SOPs/meeting-processing.md, SOPs/weekly-review.md, SOPs/available-automations.md, _setup/settings.local.json
+Files to update: CLAUDE.md, _templates/project-mapping.md, _templates/_overview.md, _templates/client-profile.md, _templates/solution.md, SOPs/meeting-processing.md, SOPs/weekly-review.md, SOPs/available-automations.md, _setup/settings.local.json
 
 Mark "Set up your profile" as completed.
 
@@ -75,6 +75,7 @@ Mark "Set up your profile" as completed.
 Mark "Configure your vault" as in_progress.
 
 - Create `Clients/` directory
+- Create `_solutions/` directory (for solution documentation)
 - Copy `_templates/_overview.md` → `Clients/_overview.md` (with their name and "Clients" filled in)
 - Copy `_setup/settings.local.json` → `.claude/settings.local.json` (create `.claude/` if needed)
 - Create `.env` from `.env.example`
@@ -166,7 +167,10 @@ Confirm: "Profile configured for [name] — you manage [work units]."
 
 ### Phase 2: Tools
 
-Mark "Configure vault structure" as completed (structure was created in Phase 1).
+Create `_solutions/` directory if it doesn't exist.
+Copy `_setup/settings.local.json` → `.claude/settings.local.json` (create `.claude/` if needed).
+Create `.env` from `.env.example`.
+Mark "Configure vault structure" as completed.
 Mark "Connect your tools" as in_progress.
 
 **Step 2.1 — Detect existing connections**
@@ -265,6 +269,7 @@ Build the list based on what was connected in Phase 2:
 **Always show:**
 - Weekly Review (Friday 14:00) — "Compiles a summary of your week's work"
 - Safety Net (Wednesday 08:00) — "Catches forgotten follow-ups and quiet [work units]"
+- Systems Review (Friday 15:00) — "Weekly analysis of what's working and what to improve"
 
 **Show if Google Calendar connected:**
 - Review Nudge (Friday 08:00) — "Flags [work units] that need context before the weekly review"

@@ -142,11 +142,64 @@ Mid-week safety check for [YOUR_NAME]'s knowledge base.
 
 1. Read `[VAULT_ROOT]/_templates/project-mapping.md` for the [WORK_UNIT] list.
 
-2. Check for issues:
-   a. If calendar connected: meetings from last 7 days with no meeting note file
-   b. Quiet [WORK_UNIT_PLURAL]: no activity-log entries in 14+ days
-   c. Pending action items: unchecked `- [ ] [YOUR_NAME]` lines in meeting notes from last 30 days
+2. Gather data (in parallel where possible):
+   a. If task manager connected: active tasks per [WORK_UNIT] — collect overdue, severely overdue (14+ days), and stale tasks (no due date, 21+ days old)
+   b. If calendar connected: meetings from last 7 days — filter to external meetings
+   c. KB meeting notes: glob for files with date prefixes matching last 7 days
+   d. KB activity logs: read first 30 lines per [WORK_UNIT] to find most recent entry date
 
-3. Report grouped by severity: NEEDS ATTENTION → REVIEW → SUMMARY.
+3. Detect problems:
+   a. Overdue tasks — group by severity (7+ days = critical, 1-6 = normal)
+   b. Meeting action items without tasks — parse Action Items sections from last 14 days, find [YOUR_NAME]-owned items with no matching task
+   c. Calendar meetings without KB notes — external meetings from last 7 days with no meeting note file
+   d. Calendar meetings without follow-up — meetings missing a follow-up email file
+   e. Stale active tasks — 14+ days overdue and still open
+   f. Quiet [WORK_UNIT_PLURAL] — no activity-log entries AND no task activity in 14+ days
+   g. Pending action items — unchecked `- [ ] [YOUR_NAME]` lines in meeting notes from last 30 days
+
+4. Report grouped by severity: URGENT → NEEDS ATTENTION → REVIEW → SUMMARY.
    If all clear: "No forgotten items found."
+
+5. Offer to create tasks for orphaned action items.
+```
+
+---
+
+## 6. Systems Review
+
+- **taskId:** `systems-review`
+- **Schedule:** `0 15 * * 5` — Friday 15:00
+- **Prerequisites:** None (works with activity logs and automation history)
+
+**What it does:** Analyses your automation usage, identifies patterns in manual work, checks for stale data, and proposes improvements. Keeps the system getting better every week.
+
+**Prompt:**
+```
+You are running the weekly systems review for [YOUR_NAME]'s knowledge base.
+
+1. Gather data from this week:
+   - Activity logs across all [WORK_UNIT_PLURAL] — what work was done
+   - Automation outcomes — which scheduled tasks ran, which failed or needed manual intervention
+   - Check `_solutions/` for newly documented solutions
+
+2. Read the previous review (if it exists) at `[VAULT_ROOT]/SOPs/systems-improvement-log.md`. Check status of last week's proposals.
+
+3. Analyse patterns:
+   - Repetitive manual work that could be automated
+   - Automation failures or friction points
+   - Coverage gaps — [WORK_UNIT_PLURAL] with activity but thin KB context
+   - Stale data — profiles not updated in 60+ days, strategy docs with expired goals
+
+4. Generate proposals in three tiers:
+   - Quick fixes (do now) — broken references, stale data, simple improvements
+   - Improvements (do this week) — automation enhancements, new workflows
+   - Strategic (track for later) — larger initiatives, new integrations
+
+5. Present findings as a structured report with concrete proposals. Compare to last week's metrics.
+
+6. If [YOUR_NAME] approves quick fixes, implement them. Note every change.
+
+7. Update `[VAULT_ROOT]/SOPs/systems-improvement-log.md` with this week's analysis, changes made, open proposals, and metrics.
+
+This task requires user interaction at steps 5-6 (review report, approve fixes).
 ```

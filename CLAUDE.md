@@ -42,6 +42,22 @@ To resolve any [WORK_UNIT] name to an absolute file path:
 
 ---
 
+## Auto-Retrieve: Knowledge Before Work
+
+Before starting non-trivial work, **silently** search for relevant past knowledge. Do this the same way Auto-Read loads context — have it ready without announcing it.
+
+1. **Search `_solutions/`** — grep frontmatter and headings for matching problem types, tags, or area names relevant to the current task
+2. **Scan memory files** — check `MEMORY.md` index for relevant learnings (feedback, references, patterns)
+3. **Check recent activity** — if working on a [WORK_UNIT], scan their last 3-5 `activity-log.md` entries
+
+**When to trigger:** Tasks that involve debugging, building/modifying automations, processing data from external tools, or complex work.
+
+**When NOT to trigger:** Simple lookups, file reads, quick edits, or straightforward tasks where past context won't change the approach.
+
+If relevant solutions or learnings are found, use them to inform the approach. If a past solution directly applies, reference it rather than re-discovering the fix.
+
+---
+
 ## Auto-Log: Activity Logging After Work
 
 After completing meaningful work for a [WORK_UNIT] during a session, **automatically** append a dated entry to their `activity-log.md`. Do not ask for permission.
@@ -72,6 +88,25 @@ Write **rich** entries — not just "did X" but "did X because Y, result was Z, 
 ## Auto-Update: Strategy Changes
 
 When strategic decisions are made during a session (new goals, changed priorities, updated metrics, scope changes), **automatically** update the relevant sections in the [WORK_UNIT]'s `strategy.md`. Keep existing content and update the relevant sections — don't overwrite the whole file.
+
+---
+
+## Auto-Compound: Solution Documentation After Problem-Solving
+
+After solving a non-trivial problem during a session, **offer** to document it as a solution. This captures the investigation and fix while context is fresh.
+
+**When to offer:**
+- After debugging an automation failure or workaround
+- After figuring out a tool integration or formatting issue
+- After resolving a data or workflow problem
+- After any "that was hard to figure out" moment
+
+**How:** Ask lightly — "This seems worth documenting as a solution. Should I save it to `_solutions/`?" If [YOUR_NAME] says no, move on. If yes, create a file at `_solutions/YYYY-MM-DD-{slug}.md` using the template at `_templates/solution.md`.
+
+**Problem types** (use in frontmatter, extensible):
+`automation-failure`, `tool-integration`, `formatting`, `workflow`, `data-issue`
+
+Do NOT document routine work, simple fixes, or things that are obvious from the code. Solutions should capture knowledge that would otherwise be lost.
 
 ---
 
@@ -127,6 +162,7 @@ After context compression, re-read the daily journal to recover state.
 | Weekly review | `SOPs/weekly-review.md` |
 | Name → folder mapping | `_templates/project-mapping.md` |
 | File templates | `_templates/` (profile, strategy, activity-log) |
+| Solution documentation format | `_templates/solution.md` |
 | Available automations | `SOPs/available-automations.md` |
 
 ## Vault Structure
@@ -144,6 +180,7 @@ After context compression, re-read the daily journal to recover state.
 - `SOPs/` — Standard operating procedures
 - `_templates/` — File format templates
 - `_daily/` — Cross-[WORK_UNIT] daily session journals
+- `_solutions/` — Cross-cutting problem→solution documentation (searchable by problem type and tags)
 
 ## Data Sources
 
